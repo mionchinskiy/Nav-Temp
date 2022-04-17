@@ -15,6 +15,7 @@
 		2CAC8CA5280C605600483900 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8CA4280C605600483900 /* FeedViewController.swift */; };
 		2CAC8CA7280C606100483900 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8CA6280C606100483900 /* ProfileViewController.swift */; };
 		2CAC8CA9280C621F00483900 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8CA8280C621F00483900 /* PostViewController.swift */; };
+		2CAC8CAB280C728C00483900 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8CAA280C728C00483900 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2CAC8CA4280C605600483900 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		2CAC8CA6280C606100483900 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2CAC8CA8280C621F00483900 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		2CAC8CAA280C728C00483900 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				2CAC8C90280C5C1100483900 /* AppDelegate.swift */,
 				2CAC8CA8280C621F00483900 /* PostViewController.swift */,
+				2CAC8CAA280C728C00483900 /* Post.swift */,
 				2CAC8CA4280C605600483900 /* FeedViewController.swift */,
 				2CAC8CA6280C606100483900 /* ProfileViewController.swift */,
 				2CAC8C92280C5C1100483900 /* SceneDelegate.swift */,
@@ -148,6 +151,7 @@
 				2CAC8C91280C5C1100483900 /* AppDelegate.swift in Sources */,
 				2CAC8CA7280C606100483900 /* ProfileViewController.swift in Sources */,
 				2CAC8CA5280C605600483900 /* FeedViewController.swift in Sources */,
+				2CAC8CAB280C728C00483900 /* Post.swift in Sources */,
 				2CAC8C93280C5C1100483900 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
