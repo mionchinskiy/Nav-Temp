@@ -1,17 +1,11 @@
-//
-//  AppDelegate.swift
-//  Navigation
-//
-//  Created by Иван Могутов on 17.04.2022.
-//
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     let profileImage = UIImage(systemName: "person.circle")
     let feedImage = UIImage(systemName: "list.bullet.circle")
     
@@ -39,8 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return tabBarController
         }
         
-        
-    
         self.window?.rootViewController = createTabBarController()
         self.window?.makeKeyAndVisible()
         
