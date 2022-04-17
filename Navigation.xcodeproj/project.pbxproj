@@ -12,6 +12,8 @@
 		2CAC8C95280C5C1100483900 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8C94280C5C1100483900 /* ViewController.swift */; };
 		2CAC8C9A280C5C1400483900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAC8C99280C5C1400483900 /* Assets.xcassets */; };
 		2CAC8C9D280C5C1400483900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAC8C9B280C5C1400483900 /* LaunchScreen.storyboard */; };
+		2CAC8CA5280C605600483900 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8CA4280C605600483900 /* FeedViewController.swift */; };
+		2CAC8CA7280C606100483900 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8CA6280C606100483900 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2CAC8C99280C5C1400483900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAC8C9C280C5C1400483900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CAC8C9E280C5C1400483900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CAC8CA4280C605600483900 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2CAC8CA6280C606100483900 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				2CAC8C90280C5C1100483900 /* AppDelegate.swift */,
+				2CAC8CA4280C605600483900 /* FeedViewController.swift */,
+				2CAC8CA6280C606100483900 /* ProfileViewController.swift */,
 				2CAC8C92280C5C1100483900 /* SceneDelegate.swift */,
 				2CAC8C94280C5C1100483900 /* ViewController.swift */,
 				2CAC8C99280C5C1400483900 /* Assets.xcassets */,
@@ -136,6 +142,8 @@
 			files = (
 				2CAC8C95280C5C1100483900 /* ViewController.swift in Sources */,
 				2CAC8C91280C5C1100483900 /* AppDelegate.swift in Sources */,
+				2CAC8CA7280C606100483900 /* ProfileViewController.swift in Sources */,
+				2CAC8CA5280C605600483900 /* FeedViewController.swift in Sources */,
 				2CAC8C93280C5C1100483900 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
