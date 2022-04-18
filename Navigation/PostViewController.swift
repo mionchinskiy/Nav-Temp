@@ -21,6 +21,7 @@ class PostViewController: UIViewController {
     
     
     private func setupView() {
+        
         let button = UIBarButtonItem(title: "Delete post", style: .plain, target: self, action: #selector(buttonAction1))
         
         self.view.backgroundColor = .systemBackground
