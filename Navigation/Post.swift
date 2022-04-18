@@ -1,9 +1,3 @@
-//
-//  Post.swift
-//  Navigation
-//
-//  Created by Иван Могутов on 17.04.2022.
-//
 
 import Foundation
 
