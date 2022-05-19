@@ -19,7 +19,7 @@ class ProfileHeaderView: UIView {
         nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         return nameLabel
     }()
-   
+    
     private lazy var statusLabel: UILabel = {
         let statusLabel = UILabel()
         statusLabel.text = "Listening to music"
@@ -36,7 +36,6 @@ class ProfileHeaderView: UIView {
     
     private var statusText: String = ""
     
-    
     private lazy var textFieldStatus: UITextField = {
         let textFieldStatus = UITextField()
         textFieldStatus.layer.borderWidth = 1
@@ -45,11 +44,9 @@ class ProfileHeaderView: UIView {
         textFieldStatus.layer.cornerRadius = 12
         textFieldStatus.textColor = UIColor.black
         textFieldStatus.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        
         textFieldStatus.addTarget(self, action: #selector(statusTextChanged(_:)), for: .editingChanged)
         return textFieldStatus
     }()
-    
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -62,7 +59,6 @@ class ProfileHeaderView: UIView {
         button.layer.shadowRadius = 4
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.7
-        
         return button
     }()
     
@@ -70,7 +66,7 @@ class ProfileHeaderView: UIView {
         print("Status")
         statusLabel.text = textFieldStatus.text
     }
-   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imageView)
@@ -78,7 +74,6 @@ class ProfileHeaderView: UIView {
         addSubview(button)
         addSubview(statusLabel)
         addSubview(textFieldStatus)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -93,7 +88,7 @@ class ProfileHeaderView: UIView {
         button.frame = CGRect(x: 16, y: 159, width: self.bounds.width - 32, height: 50)
         textFieldStatus.frame = CGRect(x: 132, y: 103, width: self.bounds.width - 132 - 16, height: 40)
     }
-
+    
 }
 
 
