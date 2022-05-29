@@ -28,12 +28,6 @@ class ProfileHeaderView: UIView {
         return statusLabel
     }()
     
-    
-    @objc func statusTextChanged(_ textField: UITextField) {
-        statusText = textField.text!
-        print(statusText)
-    }
-    
     private var statusText: String = ""
     
     private lazy var textFieldStatus: UITextField = {
@@ -62,11 +56,6 @@ class ProfileHeaderView: UIView {
         return button
     }()
     
-    @objc func buttonPressed() {
-        print("Status")
-        statusLabel.text = textFieldStatus.text
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imageView)
@@ -78,6 +67,16 @@ class ProfileHeaderView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func statusTextChanged(_ textField: UITextField) {
+        statusText = textField.text ?? ""
+        print(statusText)
+    }
+    
+    @objc func buttonPressed() {
+        print("Status")
+        statusLabel.text = textFieldStatus.text
     }
     
     override func layoutSubviews() {
