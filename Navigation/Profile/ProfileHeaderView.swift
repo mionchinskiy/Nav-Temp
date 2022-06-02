@@ -60,34 +60,48 @@ class ProfileHeaderView: UIView {
         super.init(frame: frame)
         addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(fullNameLabel)
-        fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(setStatusButton)
-        setStatusButton.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(statusLabel)
-        statusLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(statusTextField)
-        statusTextField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             avatarImageView.widthAnchor.constraint(equalToConstant: 100),
             avatarImageView.heightAnchor.constraint(equalToConstant: 100),
+            ])
+        
+        addSubview(fullNameLabel)
+        fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
             fullNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
             fullNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             fullNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 27),
+            ])
+            
+        addSubview(setStatusButton)
+        setStatusButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
             setStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             setStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             setStatusButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 16),
+            ])
+        
+        addSubview(statusLabel)
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            statusLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
+            statusLabel.bottomAnchor.constraint(equalTo: statusTextField.topAnchor, constant: -5)
+            ])
+        
+        addSubview(statusTextField)
+        statusTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
             statusTextField.widthAnchor.constraint(equalTo: widthAnchor, constant: -148),
             statusTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 132),
             statusTextField.bottomAnchor.constraint(equalTo: setStatusButton.topAnchor, constant: -16),
-            statusTextField.heightAnchor.constraint(equalToConstant: 40),
-            statusLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
-            statusLabel.bottomAnchor.constraint(equalTo: statusTextField.topAnchor, constant: -5)
-            
-        
+            statusTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
         
     }
