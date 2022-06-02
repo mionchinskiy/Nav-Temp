@@ -11,7 +11,7 @@ class LogInViewController: UIViewController {
         return logoImageView
     }()
     
-    
+    let stackView = UIStackView()
     
     private func setupLogoIV() {
         let logoImageView = logoImageView
@@ -21,8 +21,6 @@ class LogInViewController: UIViewController {
         logoImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         logoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 120).isActive = true
     }
-    
-    let stackView = UIStackView()
     
     private lazy var emailTextField: UITextField = {
         let emailTextField = UITextField()
@@ -36,7 +34,6 @@ class LogInViewController: UIViewController {
         emailTextField.autocapitalizationType = .none
         return emailTextField
     }()
-    
     
     private lazy var passwordTextField: UITextField = {
         let passwordTextField = UITextField()
@@ -53,23 +50,6 @@ class LogInViewController: UIViewController {
         passwordTextField.autocapitalizationType = .none
         return passwordTextField
     }()
-    
-    
-    func configureStackView() {
-        contentView.addSubview(stackView)
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.layer.borderColor = UIColor.lightGray.cgColor
-        stackView.layer.borderWidth = 0.5
-        stackView.layer.cornerRadius = 10
-        stackView.layer.masksToBounds = true
-        stackView.addArrangedSubview(emailTextField)
-        stackView.addArrangedSubview(passwordTextField)
-        stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 120).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        
-    }
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -89,21 +69,6 @@ class LogInViewController: UIViewController {
         return button
     }()
     
-    @objc private func buttonPressed() {
-        let profileViewController = ProfileViewController()
-        self.navigationController?.pushViewController(profileViewController, animated: true)
-    }
-    
-    private func setupButton() {
-        contentView.addSubview(button)
-        
-        button.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16).isActive = true
-        button.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    }
-    
     private let contentView: UIView = {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -114,8 +79,36 @@ class LogInViewController: UIViewController {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
-        
     }()
+    
+    func configureStackView() {
+        contentView.addSubview(stackView)
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.layer.borderColor = UIColor.lightGray.cgColor
+        stackView.layer.borderWidth = 0.5
+        stackView.layer.cornerRadius = 10
+        stackView.layer.masksToBounds = true
+        stackView.addArrangedSubview(emailTextField)
+        stackView.addArrangedSubview(passwordTextField)
+        stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 120).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+    }
+    
+    @objc private func buttonPressed() {
+        let profileViewController = ProfileViewController()
+        self.navigationController?.pushViewController(profileViewController, animated: true)
+    }
+    
+    private func setupButton() {
+        contentView.addSubview(button)
+        button.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16).isActive = true
+        button.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
     
     private func configureContentView() {
         let contentView = contentView
@@ -126,7 +119,6 @@ class LogInViewController: UIViewController {
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        
     }
     
     private func configureScrollView() {
@@ -136,7 +128,6 @@ class LogInViewController: UIViewController {
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
     }
     
     override func viewDidLoad() {
@@ -147,7 +138,6 @@ class LogInViewController: UIViewController {
         setupLogoIV()
         configureStackView()
         setupButton()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -155,7 +145,6 @@ class LogInViewController: UIViewController {
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(kbdShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         nc.addObserver(self, selector: #selector(kbdHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -163,25 +152,19 @@ class LogInViewController: UIViewController {
         let nc = NotificationCenter.default
         nc.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         nc.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
     }
-    
-    
+
     @objc private func kbdShow(notification: NSNotification) {
         if let kbdSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             scrollView.contentInset.bottom = kbdSize.height
             scrollView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbdSize.height, right: 0)
-            
         }
-        
     }
+    
     @objc private func kbdHide(notification: NSNotification) {
         scrollView.contentInset.bottom = .zero
         scrollView.verticalScrollIndicatorInsets = .zero
-        
     }
-    
 }
 
 extension UITextField {
@@ -189,7 +172,4 @@ extension UITextField {
         self.leftView = UIView(frame: CGRect(x: self.frame.minX, y: self.frame.minY, width: size, height: self.frame.height))
         self.leftViewMode = .always
     }
-    
-    
-    
 }
