@@ -3,47 +3,55 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
-    
     var post = Post(title: "My Post")
     
-    
-    @objc private func buttonAction() {
-        
-        let postViewController = PostViewController()
-        
-        self.navigationController?.pushViewController(postViewController, animated: true)
-        
-        postViewController.titlePost = post.title
-        
-    }
-    
     private lazy var button: UIButton = {
-        
         let button = UIButton()
-        
         button.backgroundColor = .systemBlue
-        
-        button.setTitle("Go to post", for: .normal)
-        
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
+        button.setTitle("Кнопка 1", for: .normal)
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
-        
     }()
     
-    private func setupButton() {
-        self.view.addSubview(self.button)
-        self.button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
-        self.button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
-        self.button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
-        self.button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    private lazy var button1: UIButton = {
+        let button1 = UIButton()
+        button1.backgroundColor = .systemBlue
+        button1.setTitle("Кнопка 2", for: .normal)
+        button1.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        return button1
+    }()
+    
+    let stackView = UIStackView()
+    
+    @objc private func buttonPressed() {
+        let postViewController = PostViewController()
+        self.navigationController?.pushViewController(postViewController, animated: true)
+        postViewController.titlePost = post.title
+    }
+    
+    func configureStackView() {
+        view.addSubview(stackView)
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 10
+        addButtonsToStackView()
+        setStackViewConstraints()
+    }
+    
+    func setStackViewConstraints() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func addButtonsToStackView() {
+        stackView.addArrangedSubview(button)
+        stackView.addArrangedSubview(button1)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
-        setupButton()
+        configureStackView()
     }
 }
