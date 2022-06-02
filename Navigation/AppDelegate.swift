@@ -19,17 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return UINavigationController(rootViewController: feedVC)
         }
         
-        func createProfileViewController() -> UINavigationController {
-            let profileVC = ProfileViewController()
-            profileVC.title = "Profile"
-            profileVC.tabBarItem = UITabBarItem(title: "Profile", image: profileImage, tag: 1)
-            return UINavigationController(rootViewController: profileVC)
+        func createLogInViewController() -> UINavigationController {
+            let logInVC = LogInViewController()
+            logInVC.tabBarItem = UITabBarItem(title: "Profile", image: profileImage, tag: 1)
+            return UINavigationController(rootViewController: logInVC)
         }
         
         func createTabBarController() -> UITabBarController {
             let tabBarController = UITabBarController()
             UITabBar.appearance().backgroundColor = .systemGray6
-            tabBarController.viewControllers = [createFeedViewController(), createProfileViewController()]
+            tabBarController.viewControllers = [createFeedViewController(), createLogInViewController()]
             return tabBarController
         }
         
