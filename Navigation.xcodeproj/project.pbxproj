@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C3EF5DA2836BC89003B6AA7 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF5D92836BC89003B6AA7 /* ProfileHeaderView.swift */; };
+		2C74772D284940AF007FD6A8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C74772C284940AF007FD6A8 /* LogInViewController.swift */; };
 		2CAC8C91280C5C1100483900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8C90280C5C1100483900 /* AppDelegate.swift */; };
 		2CAC8C93280C5C1100483900 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8C92280C5C1100483900 /* SceneDelegate.swift */; };
 		2CAC8C95280C5C1100483900 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8C94280C5C1100483900 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		2C3EF5D92836BC89003B6AA7 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		2C74772C284940AF007FD6A8 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		2CAC8C8D280C5C1100483900 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAC8C90280C5C1100483900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAC8C92280C5C1100483900 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			children = (
 				2CAC8CA6280C606100483900 /* ProfileViewController.swift */,
 				2C3EF5D92836BC89003B6AA7 /* ProfileHeaderView.swift */,
+				2C74772C284940AF007FD6A8 /* LogInViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				2CAC8CA5280C605600483900 /* FeedViewController.swift in Sources */,
 				2CAC8CAB280C728C00483900 /* Post.swift in Sources */,
 				2CAC8CAD280C8A8F00483900 /* InfoViewController.swift in Sources */,
+				2C74772D284940AF007FD6A8 /* LogInViewController.swift in Sources */,
 				2CAC8C93280C5C1100483900 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
