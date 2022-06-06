@@ -91,7 +91,7 @@ class ProfileHeaderView: UIView {
         
         NSLayoutConstraint.activate([
             statusLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
-            statusLabel.bottomAnchor.constraint(equalTo: statusTextField.topAnchor, constant: -5)
+            statusLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 5)
             ])
         
         addSubview(statusTextField)

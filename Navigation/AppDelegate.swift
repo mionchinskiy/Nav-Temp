@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         func createLogInViewController() -> UINavigationController {
             let logInVC = LogInViewController()
             logInVC.tabBarItem = UITabBarItem(title: "Profile", image: profileImage, tag: 1)
-            logInVC.navigationController?.navigationBar.isHidden = true
             return UINavigationController(rootViewController: logInVC)
         }
         
