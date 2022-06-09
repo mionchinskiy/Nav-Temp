@@ -39,6 +39,8 @@ class ProfileHeaderView: UIView {
         statusTextField.textColor = UIColor.black
         statusTextField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         statusTextField.addTarget(self, action: #selector(statusTextChanged(_:)), for: .editingChanged)
+        statusTextField.placeholder = "Set your status..."
+        statusTextField.indent(size: 10)
         return statusTextField
     }()
     
@@ -58,6 +60,7 @@ class ProfileHeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .systemGray6
         addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         
