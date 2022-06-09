@@ -3,10 +3,9 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-  private  lazy var tableView: UITableView = {
-       let tableView = UITableView()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.backgroundColor = .systemRed
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: String(describing: PostTableViewCell.self))
@@ -14,7 +13,6 @@ class ProfileViewController: UIViewController {
     }()
     
     let posts = Post.makePosts()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +24,10 @@ class ProfileViewController: UIViewController {
     private func layout() {
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
@@ -38,12 +35,10 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
-
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ProfileHeaderView()
-        
         return header
     }
     
@@ -52,26 +47,20 @@ extension ProfileViewController: UITableViewDelegate {
     }
 }
 
-
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-//        var content: UIListContentConfiguration = cell.defaultContentConfiguration()
-//        content.text = "секция \(indexPath.section), ячейка \(indexPath.row)"
-//        cell.contentConfiguration = content
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as! PostTableViewCell
         cell.setupCell(post: posts[indexPath.row])
         return cell
-        }
-        
     }
+}
 
-    
-    
+
+
 
 
 

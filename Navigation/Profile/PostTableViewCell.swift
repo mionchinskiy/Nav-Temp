@@ -1,9 +1,3 @@
-//
-//  PostTableViewCell.swift
-//  Navigation
-//
-//  Created by Иван Могутов on 04.06.2022.
-//
 
 import UIKit
 
@@ -56,40 +50,29 @@ class PostTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        customizeCell()
         layout()
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func customizeCell() {
-//        inCellView.backgroundColor = .systemGreen
-//        imagePostView.backgroundColor = .systemBlue
-//        authorLabel.backgroundColor = .systemCyan
-//        likesLabel.backgroundColor = .systemMint
-//        viewsLabel.backgroundColor = .systemGray
-    }
-
     func setupCell(post: Post) {
         imagePostView.image = UIImage(named: "\(post.image)")
         authorLabel.text = post.author
         descriptionLabel.text = post.description
         likesLabel.text = "Likes: \(post.likes)"
         viewsLabel.text = "Views: \(post.views)"
-        
     }
     
     private func layout() {
-        contentView.addSubview(inCellView)
         
+        contentView.addSubview(inCellView)
         NSLayoutConstraint.activate([
-        inCellView.topAnchor.constraint(equalTo: contentView.topAnchor),
-        inCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-        inCellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        inCellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            inCellView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            inCellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            inCellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            inCellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         contentView.addSubview(authorLabel)
@@ -106,18 +89,13 @@ class PostTableViewCell: UITableViewCell {
             imagePostView.trailingAnchor.constraint(equalTo: inCellView.trailingAnchor),
             imagePostView.heightAnchor.constraint(equalTo: inCellView.widthAnchor),
             imagePostView.widthAnchor.constraint(equalTo: inCellView.widthAnchor)
-//            imagePostView.bottomAnchor.constraint(equalTo: inCellView.bottomAnchor, constant: -8)
-        
         ])
-        
-        
         
         contentView.addSubview(descriptionLabel)
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: imagePostView.bottomAnchor, constant: 16),
             descriptionLabel.leadingAnchor.constraint(equalTo: inCellView.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: inCellView.trailingAnchor, constant: -16)
-        
         ])
         
         contentView.addSubview(likesLabel)
@@ -125,8 +103,7 @@ class PostTableViewCell: UITableViewCell {
             likesLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
             likesLabel.leadingAnchor.constraint(equalTo: inCellView.leadingAnchor, constant: 16),
             likesLabel.bottomAnchor.constraint(equalTo: inCellView.bottomAnchor, constant: -16)
-        
-        
+            
         ])
         
         contentView.addSubview(viewsLabel)
@@ -134,9 +111,7 @@ class PostTableViewCell: UITableViewCell {
             viewsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
             viewsLabel.trailingAnchor.constraint(equalTo: inCellView.trailingAnchor, constant: -16),
             viewsLabel.bottomAnchor.constraint(equalTo: inCellView.bottomAnchor, constant: -16)
-        
         ])
     }
-    
 }
 
