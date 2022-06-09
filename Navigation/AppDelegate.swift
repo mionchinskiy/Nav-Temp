@@ -6,8 +6,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    let profileImage = UIImage(systemName: "person.circle")
-    let feedImage = UIImage(systemName: "list.bullet.circle")
+    let profileImage = UIImage(systemName: "person.fill")
+    let feedImage = UIImage(systemName: "house.fill")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -19,17 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return UINavigationController(rootViewController: feedVC)
         }
         
-        func createProfileViewController() -> UINavigationController {
-            let profileVC = ProfileViewController()
-            profileVC.title = "Profile"
-            profileVC.tabBarItem = UITabBarItem(title: "Profile", image: profileImage, tag: 1)
-            return UINavigationController(rootViewController: profileVC)
+        func createLogInViewController() -> UINavigationController {
+            let logInVC = LogInViewController()
+            logInVC.tabBarItem = UITabBarItem(title: "Profile", image: profileImage, tag: 1)
+            return UINavigationController(rootViewController: logInVC)
         }
         
         func createTabBarController() -> UITabBarController {
             let tabBarController = UITabBarController()
             UITabBar.appearance().backgroundColor = .systemGray6
-            tabBarController.viewControllers = [createFeedViewController(), createProfileViewController()]
+            tabBarController.viewControllers = [createFeedViewController(), createLogInViewController()]
             return tabBarController
         }
         
