@@ -39,6 +39,8 @@ class ProfileHeaderView: UIView {
         statusTextField.textColor = UIColor.black
         statusTextField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         statusTextField.addTarget(self, action: #selector(statusTextChanged(_:)), for: .editingChanged)
+        statusTextField.placeholder = "Set your status..."
+        statusTextField.indent(size: 10)
         return statusTextField
     }()
     
@@ -58,6 +60,7 @@ class ProfileHeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .systemGray6
         addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -66,7 +69,7 @@ class ProfileHeaderView: UIView {
             avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             avatarImageView.widthAnchor.constraint(equalToConstant: 100),
             avatarImageView.heightAnchor.constraint(equalToConstant: 100),
-            ])
+        ])
         
         addSubview(fullNameLabel)
         fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -75,8 +78,8 @@ class ProfileHeaderView: UIView {
             fullNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
             fullNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             fullNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 27),
-            ])
-            
+        ])
+        
         addSubview(setStatusButton)
         setStatusButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -84,7 +87,7 @@ class ProfileHeaderView: UIView {
             setStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             setStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             setStatusButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 16),
-            ])
+        ])
         
         addSubview(statusLabel)
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -92,7 +95,7 @@ class ProfileHeaderView: UIView {
         NSLayoutConstraint.activate([
             statusLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
             statusLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 5)
-            ])
+        ])
         
         addSubview(statusTextField)
         statusTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -103,7 +106,6 @@ class ProfileHeaderView: UIView {
             statusTextField.bottomAnchor.constraint(equalTo: setStatusButton.topAnchor, constant: -16),
             statusTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
-        
     }
     
     required init?(coder: NSCoder) {
@@ -119,9 +121,6 @@ class ProfileHeaderView: UIView {
         print("Status")
         statusLabel.text = statusTextField.text
     }
-    
-   
-    
 }
 
 

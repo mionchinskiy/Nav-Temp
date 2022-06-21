@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0E1D5428527D68001C936D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E1D5328527D68001C936D /* PostTableViewCell.swift */; };
 		2C3EF5DA2836BC89003B6AA7 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF5D92836BC89003B6AA7 /* ProfileHeaderView.swift */; };
 		2C74772D284940AF007FD6A8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C74772C284940AF007FD6A8 /* LogInViewController.swift */; };
 		2CAC8C91280C5C1100483900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAC8C90280C5C1100483900 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0E1D5328527D68001C936D /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		2C3EF5D92836BC89003B6AA7 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		2C74772C284940AF007FD6A8 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		2CAC8C8D280C5C1100483900 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				2CAC8CA6280C606100483900 /* ProfileViewController.swift */,
+				2C0E1D5328527D68001C936D /* PostTableViewCell.swift */,
 				2C3EF5D92836BC89003B6AA7 /* ProfileHeaderView.swift */,
 				2C74772C284940AF007FD6A8 /* LogInViewController.swift */,
 			);
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0E1D5428527D68001C936D /* PostTableViewCell.swift in Sources */,
 				2CAC8CA9280C621F00483900 /* PostViewController.swift in Sources */,
 				2CAC8C95280C5C1100483900 /* ViewController.swift in Sources */,
 				2CAC8C91280C5C1100483900 /* AppDelegate.swift in Sources */,
