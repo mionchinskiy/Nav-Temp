@@ -61,7 +61,7 @@ class PhotosTableViewCell: UITableViewCell {
     private let photosLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.text = "Photos"
         return label
     }()
@@ -87,10 +87,10 @@ class PhotosTableViewCell: UITableViewCell {
             inCellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             inCellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            arrowImageView.topAnchor.constraint(equalTo: inCellView.topAnchor, constant: 12),
             arrowImageView.trailingAnchor.constraint(equalTo: inCellView.trailingAnchor, constant: -12),
             arrowImageView.heightAnchor.constraint(equalToConstant: 24),
             arrowImageView.widthAnchor.constraint(equalToConstant: 24),
+            arrowImageView.centerYAnchor.constraint(equalTo: photosLabel.centerYAnchor),
             
             photosLabel.leadingAnchor.constraint(equalTo: inCellView.leadingAnchor, constant: 12),
             photosLabel.topAnchor.constraint(equalTo: inCellView.topAnchor, constant: 12),
