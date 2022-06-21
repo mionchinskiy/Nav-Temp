@@ -10,6 +10,7 @@ class ProfileHeaderView: UIView {
         avatarImageView.layer.cornerRadius = 50
         avatarImageView.layer.borderWidth = 3
         avatarImageView.layer.borderColor = UIColor.white.cgColor
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         return avatarImageView
     }()
     
@@ -17,6 +18,7 @@ class ProfileHeaderView: UIView {
         let fullNameLabel = UILabel()
         fullNameLabel.text = "Hipster Cat"
         fullNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
         return fullNameLabel
     }()
     
@@ -25,6 +27,7 @@ class ProfileHeaderView: UIView {
         statusLabel.text = "Listening to music"
         statusLabel.textColor = UIColor.gray
         statusLabel.font = UIFont.systemFont(ofSize: 14)
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
         return statusLabel
     }()
     
@@ -41,6 +44,7 @@ class ProfileHeaderView: UIView {
         statusTextField.addTarget(self, action: #selector(statusTextChanged(_:)), for: .editingChanged)
         statusTextField.placeholder = "Set your status..."
         statusTextField.indent(size: 10)
+        statusTextField.translatesAutoresizingMaskIntoConstraints = false
         return statusTextField
     }()
     
@@ -58,54 +62,42 @@ class ProfileHeaderView: UIView {
         return setStatusButton
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .systemGray6
+    func layout() {
         addSubview(avatarImageView)
-        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(fullNameLabel)
+        addSubview(setStatusButton)
+        addSubview(statusLabel)
+        addSubview(statusTextField)
         
         NSLayoutConstraint.activate([
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             avatarImageView.widthAnchor.constraint(equalToConstant: 100),
             avatarImageView.heightAnchor.constraint(equalToConstant: 100),
-        ])
         
-        addSubview(fullNameLabel)
-        fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
             fullNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
             fullNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             fullNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 27),
-        ])
         
-        addSubview(setStatusButton)
-        setStatusButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
             setStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             setStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             setStatusButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 16),
-        ])
+            setStatusButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
         
-        addSubview(statusLabel)
-        statusLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
             statusLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
-            statusLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 5)
-        ])
+            statusLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 5),
         
-        addSubview(statusTextField)
-        statusTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
             statusTextField.widthAnchor.constraint(equalTo: widthAnchor, constant: -148),
             statusTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 132),
             statusTextField.bottomAnchor.constraint(equalTo: setStatusButton.topAnchor, constant: -16),
             statusTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .systemGray6
+        layout()
     }
     
     required init?(coder: NSCoder) {
