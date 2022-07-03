@@ -87,7 +87,7 @@ class ProfileHeaderView: UIView {
         })
     }
     
-    func layout() {
+    private func layout() {
         
         addSubview(fullNameLabel)
         addSubview(setStatusButton)
