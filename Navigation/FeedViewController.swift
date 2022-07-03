@@ -26,7 +26,7 @@ class FeedViewController: UIViewController {
     @objc private func buttonPressed() {
         let postViewController = PostViewController()
         self.navigationController?.pushViewController(postViewController, animated: true)
-        postViewController.titlePost = post.author
+        postViewController.titlePost = "Заголовок поста"
     }
     
     func configureStackView() {
