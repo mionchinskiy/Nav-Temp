@@ -1,9 +1,8 @@
 
 import UIKit
+import StorageService
 
 class FeedViewController: UIViewController {
-    
-    var post = Post(author: "", description: "", image: "", likes: 0, views: 0)
     
     private lazy var button: UIButton = {
         let button = UIButton()
