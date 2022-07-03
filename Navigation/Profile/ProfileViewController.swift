@@ -22,6 +22,13 @@ class ProfileViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .white
         layout()
+        
+#if DEBUG
+        view.backgroundColor = .systemYellow
+#else
+        view.backgroundColor = .systemGreen
+#endif
+        
     }
     
     private func layout() {
